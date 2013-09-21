@@ -1,6 +1,6 @@
 @echo off
-"C:/scripts/inc/cde.py" "%1" > "C:/scripts/temp/dirTemp.txt"
-set /p myvar= < C:/scripts/temp/dirTemp.txt
-echo. > "C:/scripts/temp/dirTemp.txt"
+"%~dp0../inc/cde.py" "%1" > "%~dp0../temp/dirTemp.txt"
+set /p myvar= < "%~dp0../temp/dirTemp.txt"
+echo. > "%~dp0../temp/dirTemp.txt"
 cd /d %myvar%
 @echo on

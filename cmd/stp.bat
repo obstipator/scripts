@@ -1,3 +1,3 @@
 
 cde stp
-C:/scripts/inc/stpnul.bat < nul
+%~dp0../inc/stpnul.bat < nul
