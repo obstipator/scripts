@@ -1,14 +1,12 @@
  
 autorun.bat
-config/*
 key*
 mail*
 steam*
 toInstall*
 youtube*
 ssh/*
-temp/*
 down*
 linux/*
 meta/*
-
+debug*
