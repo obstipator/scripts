@@ -1,0 +1,3 @@
+opens window explorer
+with no arguments - opens it in current directory
+with argument - navigates to the shorthand directory and opens windows explorer

@@ -1,0 +1,1 @@
+runs `compass watch` at the specified shorthand directory

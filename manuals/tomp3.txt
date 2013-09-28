@@ -1,0 +1,1 @@
+converts a sound file to mp3 format and saves it to the ffmpeg.ini/out directory

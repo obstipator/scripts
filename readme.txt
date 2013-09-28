@@ -3,6 +3,11 @@ Some helpful scripts for cmd
 
 Todo after git clone:
 
+add path/to/scripts/cmd/ to your path
+
+install the newest python 2.7.*
+http://www.python.org/download/releases/
+
 Extract ffmpeg.exe, ffplay.exe, and ffprobe.exe to inc/
 http://ffmpeg.zeranoe.com/builds/
 

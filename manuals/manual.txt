@@ -1,0 +1,1 @@
+gives more detailed information about custom commands

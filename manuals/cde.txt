@@ -1,0 +1,4 @@
+cmd: cde directory
+code shorthands for specific directories in cde.ini
+then use the shorthand to quickly navigate to that directory
+example: cde htdocs - cd's you to the htdocs folder

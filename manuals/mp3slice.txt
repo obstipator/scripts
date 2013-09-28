@@ -1,0 +1,2 @@
+tool to cut off segments of an mp3 file with sound previews
+saves it to the ffmpeg.ini/out directory

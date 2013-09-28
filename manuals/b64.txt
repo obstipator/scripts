@@ -1,0 +1,2 @@
+cmd: b64 file
+optimizes the png file and copies a base64 version to your clipboard
