@@ -76,7 +76,7 @@ while (good != 1) :
 	winsound.PlaySound(("%s/inc/ding.wav" % scriptsPath), winsound.SND_FILENAME)
 	good = input("%f is good? (1/0)?" % (endTime))
 #
-subprocess.call([("%s/inc/ffmpeg.exe" % scriptsPath), '-i', filename, '-ss', ('%f' % startTime), '-t', ('%f' % (endTime - startTime)), '-y', ("%s/%s_sliced.mp3" % (outDir, outFilename))])
+subprocess.call([("%s/inc/ffmpeg.exe" % scriptsPath), '-ss', ('%f' % startTime), '-t', ('%f' % (endTime - startTime)), '-i', filename, '-y', ("%s/%s_sliced.mp3" % (outDir, outFilename))])
 print "\n\nCreated file out/%s_sliced.mp3" % (outFilename)
 print "Uses range %f - %f" % (startTime, endTime)
 
