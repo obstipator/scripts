@@ -4,15 +4,16 @@ key*
 mail*
 steam*
 toInstall*
-youtube*
 ssh/*
 down*
 linux/*
-meta/*
 debug*
+out/*
+
 inc/ffmpeg.exe
 inc/ffplay.exe
 inc/ffprobe.exe
+inc/youtube-dl.exe
 
 
 
