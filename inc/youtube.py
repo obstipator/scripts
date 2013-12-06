@@ -10,6 +10,7 @@ if (not config.has_section('Users')) or (not config.has_section('Other')):
 	sys.exit('Invalid config/youtube.ini')
 
 items = config.items('Users')
+rate = config.get('Other', 'rate')
 
 for i in items :
 	archiveFile = '%s/../meta/youtube/%s_downloaded.txt' % (scriptPath, i[0])
@@ -19,4 +20,4 @@ for i in items :
 	url = 'http://www.youtube.com/user/%s/videos' % i[0]
 	dateAfter = i[1]
 	
-	subprocess.call([('%s/youtube-dl.exe' % scriptPath), '--download-archive', archiveFile, '-o', ('%s/%s' % (outDir, '%(title)s-%(id)s.%(ext)s')), '--console-title', '--rate-limit', '1m', '--restrict-filenames', '--reject-title', config.get('Other', 'rejectRegex'), '--dateafter', dateAfter, url ])
+	subprocess.call([('%s/youtube-dl.exe' % scriptPath), '--download-archive', archiveFile, '-o', ('%s/%s' % (outDir, '%(title)s-%(id)s.%(ext)s')), '--console-title', '--rate-limit', rate, '--restrict-filenames', '--reject-title', config.get('Other', 'rejectRegex'), '--dateafter', dateAfter, url ])
