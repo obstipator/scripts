@@ -1,7 +1,5 @@
 global.fs = require('fs');
 
-var events = require('events');
-var eventEmitter = new events.EventEmitter();
 
 var variables = [];
 
@@ -14,15 +12,19 @@ var replacements = [
     },
   },
 
+
   {
-    pattern: /=\s*function\s*\((?:([^,\)]+),?\s*)+\)/gi,
+    pattern: /=\s*function\s*\((?:\$?([^,\)]+),?\s*)+\)/gi,
     replacement: function (z, a) {
       variables.push(a);
-      return a;
+      return z;
     },
   },
 
-
+  {
+    pattern: /([a-z0-9_]+)\s*=\s*function\(/gi,
+    replacement: 'function $1($$',
+  },
   {
     pattern: /req\.body/gi,
     replacement: '$$params',
@@ -133,6 +135,12 @@ var replacements = [
   {
     pattern: /_\.unique/gi,
     replacement: 'array_unique',
+  },{
+    pattern: /_\.size/gi,
+    replacement: 'count',
+  },,{
+    pattern: /_\.m(in|ax)/gi,
+    replacement: 'm$1',
   },
 //  {
 //    pattern: /a/gi,
@@ -179,5 +187,6 @@ for (var k in variables) {
 
 
 console.log(content);
+console.log(variables);
 
 //emmiter1.on('this_event',callback);
