@@ -187,6 +187,6 @@ for (var k in variables) {
 
 
 console.log(content);
-console.log(variables);
+//console.log(variables);
 
 //emmiter1.on('this_event',callback);
