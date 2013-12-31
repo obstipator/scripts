@@ -41,7 +41,7 @@ while(good != 1) :
 		startTime = input("Start time?");
 	else :
 		startTime = good
-	subprocess.call(['%s/inc/ffmpeg.exe' % scriptsPath, '-t', '5', '-y', '-i', filename, '-ss', ('%f' % startTime), "%s/temp/temp.mp3" % scriptsPath])
+	subprocess.call(['%s/inc/ffmpeg.exe' % scriptsPath, '-y', '-i', filename, '-ss', ('%f' % startTime), '-t', '5', "%s/temp/temp.mp3" % scriptsPath])
 	subprocess.call(["%s/inc/ffmpeg.exe" % scriptsPath, '-y', '-i', "%s/temp/temp.mp3" % scriptsPath, "%s/temp/temp.wav" % scriptsPath])
 
 	print "\n\nPlaying starting at %s" % (startTime)
