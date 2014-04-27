@@ -128,20 +128,84 @@ var replacements = [
     pattern: /\$Page\['title'\]/gi,
     replacement: '$Page->title',
   },
+
+
+
+
   {
     pattern: /Math\./gi,
     replacement: '',
   },
   {
+    pattern: /Users::usernotes\./gi,
+    replacement: 'UserUsernotes::',
+  },
+
+
+
+
+  {
+    pattern: /([\$\s\(])([a-z0-9_]+)\['length'\]/gi,
+    replacement: '$1count($2)',
+  },{
+    pattern: /Math\./gi,
+    replacement: '',
+  },
+
+
+
+
+
+  {
     pattern: /_\.unique/gi,
     replacement: 'array_unique',
-  },{
+  },
+  {
     pattern: /_\.size/gi,
     replacement: 'count',
-  },,{
+  },
+  ,
+  {
     pattern: /_\.m(in|ax)/gi,
     replacement: 'm$1',
   },
+
+  {
+    pattern: /\{\s*-?%>/gi,
+    replacement: ': ?>',
+  },
+  {
+    pattern: /-?%>/gi,
+    replacement: '?>',
+  },
+  {
+    pattern: /<%-/gi,
+    replacement: '<?php echo',
+  },
+  {
+    pattern: /<%=/gi,
+    replacement: '<?php echo ent()',
+  },
+  {
+    pattern: /<%/gi,
+    replacement: '<?php',
+  },
+  {
+    pattern: /locals\['([a-z0-9_]+)'\]/gi,
+    replacement: '$$$1',
+  },
+  {
+    pattern: /locals\.\$?/gi,
+    replacement: '$$',
+  },{
+    pattern: /<\?php\s*\}\s*else/gi,
+    replacement: '<?php else',
+  }
+
+
+
+
+
 //  {
 //    pattern: /a/gi,
 //    replacement: 'a',

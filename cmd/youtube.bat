@@ -1,1 +1,1 @@
-@"%~dp0../inc/youtube.py"
+@python "%~dp0../inc/youtube.py"
