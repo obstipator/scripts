@@ -128,6 +128,10 @@ var replacements = [
     pattern: /\$Page\['title'\]/gi,
     replacement: '$Page->title',
   },
+  {
+    pattern: /\$Page\['json'\]/gi,
+    replacement: '$Page->json',
+  },
 
 
 

@@ -111,8 +111,6 @@ while (good != '1') :
 		continue
 	subprocess.call([("%s/inc/ffmpeg.exe" % scriptsPath), '-ss', ('%f' % max(endTime - 5, 0)), '-i', filename, '-t', '5','-c:v','libx264', '-y', ("%s/temp/vidSliceTemp.%s" % (scriptsPath, ext))])
 	
-	
-	
 	print "\n\nPlaying ending at %s" % (endTime)
 	
 	subprocess.call(['%s/vlc.exe' % vlcDir, '-vvv', '%s/temp/vidSliceTemp.%s' % (scriptsPath, ext), '--video-on-top', '--no-loop', '--play-and-exit'])
@@ -138,8 +136,15 @@ while (uploadConfirm != 'y' and uploadConfirm != 'n') :
 	uploadConfirm = raw_input('save to ffmpegOut/ dir? (y/n)?')
 #
 
-cmd = 'copy "%s/temp/vidSliceOut.%s" "%s/%s_sliced_%s-%s.%s" /y' % (scriptsPath.replace('\\', '/'), ext, outDir, outFilename, startTime, endTime, ext)
-os.system(cmd)
+#cmd = 'copy "%s/temp/vidSliceOut.%s" "%s/%s_sliced_%s-%s.%s" /y' % (scriptsPath.replace('\\', '/'), ext, outDir, outFilename, startTime, endTime, ext)
+#os.system(cmd)
+
+print '%s/temp/vidSliceOut.%s' % (scriptsPath.replace('\\', '/'), ext)
+print '%s/%s_sliced_%s-%s.%s' % (outDir, outFilename, startTime, endTime, ext)
+
+subprocess.call(['cp', '%s/temp/vidSliceOut.%s' % (scriptsPath.replace('\\', '/'), ext), '%s/%s_sliced_%s-%s.%s' % (outDir, outFilename, startTime, endTime, ext)]);
+
+
 os.system('pushd "%s" && toHd "%s_sliced_%s-%s.%s" && popd' % (outDir, outFilename, startTime, endTime, ext))
 if(uploadConfirm == 'y') :
 	print "\n\nCreated file out/%s_sliced_%s-%s.%s" % (outFilename, startTime, endTime, ext)
@@ -156,7 +161,8 @@ while (uploadConfirm != 'y' and uploadConfirm != 'n') :
 #
 
 if(uploadConfirm == 'y') :
-	subprocess.call(['python', '%s/inc/youtubeVidUpload.py' % scriptsPath, '--noauth_local_webserver', '--privacyStatus', 'unlisted', '--file', '%s/%s_sliced_%s-%s.%s' % (outDir, outFilename, startTime, endTime, ext)])
+	print '\nNO! DONT!';
+	#subprocess.call(['python', '%s/inc/youtubeVidUpload.py' % scriptsPath, '--noauth_local_webserver', '--privacyStatus', 'unlisted', '--file', '%s/%s_sliced_%s-%s.%s' % (outDir, outFilename, startTime, endTime, ext)])
 #
 #youtubeVidUpload.py --noauth_local_webserver --privacyStatus unlisted --file "E:\downloads\ffmpegOut\24.s03e03.ws.dvdrip.xvid-sfm_sliced_1094.0-1110.0.avi"
 
