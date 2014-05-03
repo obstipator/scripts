@@ -152,17 +152,21 @@ else :
 	os.system('del "%s/%s_sliced_%s-%s.%s"' % (outDir, outFilename, startTime, endTime, ext))
 #
 print "uploaded to HD"
+url = 'http://192.168.1.180/v/?v=%s_sliced_%s-%s.%s' % (outFilename, startTime, endTime, ext)
+print url
+raw_input('Press enter to copy url to clipboard');
+os.system('echo %s | clip' % url);
 
 # ffmpeg -ss 00:18:14 -i 24.s03e03.ws.dvdrip.xvid-sfm.avi -t 00:00:16 -vcodec copy -acodec copy -y 24temp1.avi
 
-uploadConfirm = raw_input('Upload to youtube?')
-while (uploadConfirm != 'y' and uploadConfirm != 'n') :
-	uploadConfirm = raw_input('what??? upload to youtube (y/n)?')
+#uploadConfirm = raw_input('Upload to youtube?')
+#while (uploadConfirm != 'y' and uploadConfirm != 'n') :
+#	uploadConfirm = raw_input('what??? upload to youtube (y/n)?')
 #
 
-if(uploadConfirm == 'y') :
-	print '\nNO! DONT!';
-	#subprocess.call(['python', '%s/inc/youtubeVidUpload.py' % scriptsPath, '--noauth_local_webserver', '--privacyStatus', 'unlisted', '--file', '%s/%s_sliced_%s-%s.%s' % (outDir, outFilename, startTime, endTime, ext)])
+#if(uploadConfirm == 'y') :
+#	print '\nNO! DONT!';
+#	#subprocess.call(['python', '%s/inc/youtubeVidUpload.py' % scriptsPath, '--noauth_local_webserver', '--privacyStatus', 'unlisted', '--file', '%s/%s_sliced_%s-%s.%s' % (outDir, outFilename, startTime, endTime, ext)])
 #
 #youtubeVidUpload.py --noauth_local_webserver --privacyStatus unlisted --file "E:\downloads\ffmpegOut\24.s03e03.ws.dvdrip.xvid-sfm_sliced_1094.0-1110.0.avi"
 
